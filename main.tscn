@@ -11,6 +11,6 @@ texture = ExtResource("1_0xm2m")
 script = ExtResource("2_h2yge")
 
 [node name="Alvo" type="Sprite2D" parent="." unique_id=1445836368]
-modulate = Color(0, 0, 0, 0.60784316)
+modulate = Color(0, 0, 0, 0.43529412)
 position = Vector2(1152, 384)
 texture = ExtResource("1_0xm2m")
