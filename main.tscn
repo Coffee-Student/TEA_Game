@@ -6,6 +6,11 @@
 [node name="Main" type="Node2D" unique_id=65788819]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=157572213]
-position = Vector2(640, 360)
+position = Vector2(128, 384)
 texture = ExtResource("1_0xm2m")
 script = ExtResource("2_h2yge")
+
+[node name="Alvo" type="Sprite2D" parent="." unique_id=1445836368]
+modulate = Color(0, 0, 0, 0.60784316)
+position = Vector2(1152, 384)
+texture = ExtResource("1_0xm2m")
