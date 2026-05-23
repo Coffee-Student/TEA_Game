@@ -1,16 +1,52 @@
 [gd_scene format=3 uid="uid://dps30muvas1w5"]
 
-[ext_resource type="Texture2D" uid="uid://vfvoiuipwcqr" path="res://icon.svg" id="1_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://c4wrch7ay16hc" path="res://Imagens/sadsonic_color.png" id="1_1bvp3"]
 [ext_resource type="Script" uid="uid://do12uhlu2gl50" path="res://sprite_2d.gd" id="2_h2yge"]
+[ext_resource type="Texture2D" uid="uid://cmire1jeqw6hv" path="res://Imagens/happysonic_color.png" id="3_272bh"]
+[ext_resource type="Texture2D" uid="uid://b2ad604g2tio1" path="res://Imagens/ragesonic_color.png" id="4_5vw27"]
+[ext_resource type="Texture2D" uid="uid://080wscgq6njh" path="res://Imagens/sadsonic_bp.png" id="4_lquwl"]
+[ext_resource type="Texture2D" uid="uid://bk24en7eusjf6" path="res://Imagens/happysonic_bp.png" id="6_kek77"]
+[ext_resource type="Texture2D" uid="uid://cml5v4ysuso17" path="res://Imagens/ragesonic_bp.png" id="7_4c57u"]
 
 [node name="Main" type="Node2D" unique_id=65788819]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=157572213]
-position = Vector2(128, 384)
-texture = ExtResource("1_0xm2m")
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=157572213 groups=["par_1"]]
+position = Vector2(115, 121)
+scale = Vector2(0.346, 0.33)
+texture = ExtResource("1_1bvp3")
 script = ExtResource("2_h2yge")
 
-[node name="Alvo" type="Sprite2D" parent="." unique_id=1445836368]
-modulate = Color(0, 0, 0, 0.43529412)
-position = Vector2(1152, 384)
-texture = ExtResource("1_0xm2m")
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=532187006 groups=["par_2"]]
+position = Vector2(116.00003, 358.00006)
+scale = Vector2(0.342, 0.33)
+texture = ExtResource("3_272bh")
+script = ExtResource("2_h2yge")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1869700781 groups=["par_3"]]
+position = Vector2(115.70201, 598.00006)
+scale = Vector2(0.34421784, 0.33)
+texture = ExtResource("4_5vw27")
+script = ExtResource("2_h2yge")
+
+[node name="Alvo" type="Sprite2D" parent="." unique_id=1445836368 groups=["par_1"]]
+position = Vector2(1168.0001, 359.00003)
+scale = Vector2(0.346, 0.33)
+texture = ExtResource("4_lquwl")
+
+[node name="Alvo2" type="Sprite2D" parent="." unique_id=1443879517 groups=["par_2"]]
+position = Vector2(1168, 122)
+scale = Vector2(0.342, 0.33)
+texture = ExtResource("6_kek77")
+
+[node name="Alvo3" type="Sprite2D" parent="." unique_id=178568215 groups=["par_3"]]
+position = Vector2(1168, 594.785)
+scale = Vector2(0.33168334, 0.33012885)
+texture = ExtResource("7_4c57u")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1683102874]
+
+[node name="LegendaSentimento" type="Label" parent="CanvasLayer" unique_id=789408087]
+offset_left = 480.0
+offset_top = 320.0
+offset_right = 760.0
+offset_bottom = 416.0
