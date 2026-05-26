@@ -19,7 +19,7 @@ func _input(event):
 		
 			for objeto in objetos_do_grupo:
 				if objeto != self:
-					if global_position.distance_to(objeto.global_position) < 100:
+					if global_position.distance_to(objeto.global_position) < 200:
 						global_position = objeto.global_position
 						encaixado = true
 						
@@ -38,8 +38,10 @@ func _executar_efeito_vitoria():
 	var escala_maior = escala_original * 1.2
 	
 	var tween = create_tween()
+		
+	tween.tween_property(self, "skew", 0.2, 0.1)
+	tween.tween_property(self, "skew", 0.0, 0.1)
+	tween.tween_property(self, "modulate", Color(2.422, 3.809, 6.052, 1.0), 0.5)
+	tween.tween_property(self, "modulate", Color(1, 1, 1), 0.5)
 	
-	# Usamos as variáveis dinâmicas em vez de números fixos
-	tween.tween_property(self, "scale", escala_maior, 0.15)
-	tween.tween_property(self, "scale", escala_original, 0.15)
-	tween.tween_property(self, "modulate", Color(0.8, 1.2, 0.8), 0.2)
+	
