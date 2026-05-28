@@ -1,5 +1,9 @@
 extends Sprite2D
 
+class_name MeuSonicDoJogo
+	
+static var jogo_ativo = false
+
 var arrastando = false
 var encaixado = false
 
@@ -8,6 +12,8 @@ func _ready():
 	posicao_inicial = global_position
 	
 func _input(event):
+	if not jogo_ativo:
+		return
 	if encaixado:
 		return #Objeto destravado
 		
