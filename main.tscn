@@ -18,14 +18,14 @@
 [node name="Main" type="Node2D" unique_id=65788819]
 
 [node name="Background" type="Sprite2D" parent="." unique_id=327730013]
-self_modulate = Color(1, 1, 1, 0.27450982)
+self_modulate = Color(1, 1, 1, 0.18039216)
 position = Vector2(640, 360.00003)
 scale = Vector2(0.9090909, 0.9375)
 texture = ExtResource("1_5vw27")
 
 [node name="Alvo" type="Sprite2D" parent="." unique_id=1445836368 groups=["par_1"]]
 self_modulate = Color(1, 1, 1, 0.99215686)
-position = Vector2(1160.0001, 576)
+position = Vector2(1152, 584.00006)
 scale = Vector2(0.346, 0.33)
 texture = ExtResource("4_lquwl")
 
@@ -90,24 +90,12 @@ grow_vertical = 2
 color = Color(0.654902, 0.654902, 0.654902, 0.8235294)
 script = ExtResource("12_w48qg")
 
-[node name="Label" type="Label" parent="TelaTutorial/TutorialOverlay" unique_id=1849832224]
-layout_mode = 1
-offset_left = 15.0
-offset_top = 4.0
-offset_right = 447.0
-offset_bottom = 68.0
-theme_override_colors/font_color = Color(0, 0, 0.5372549, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.9411765)
-theme_override_colors/font_outline_color = Color(0, 0, 1, 0.99215686)
-theme_override_font_sizes/font_size = 36
-text = "Encontre o par do Sonic!"
-
 [node name="SonicDemo" type="Sprite2D" parent="TelaTutorial/TutorialOverlay" unique_id=542597190]
-position = Vector2(170.81253, 210.34375)
-scale = Vector2(0.37372234, 0.372719)
+position = Vector2(130.8125, 138.38625)
+scale = Vector2(0.37031516, 0.34339783)
 texture = ExtResource("13_vivmo")
 
 [node name="AlvoDemo" type="Sprite2D" parent="TelaTutorial/TutorialOverlay" unique_id=475888100]
-position = Vector2(726.6425, 335.916)
-scale = Vector2(0.3765555, 0.36805743)
+position = Vector2(744.5, 354)
+scale = Vector2(0.37, 0.343)
 texture = ExtResource("14_2cqfq")
