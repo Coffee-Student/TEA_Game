@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c4wrch7ay16hc" path="res://Imagens/sadsonic_color.png" id="1_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://ducn63tm4sp4w" path="res://Imagens/backgroundsonic.png" id="1_5vw27"]
+[ext_resource type="Script" uid="uid://bp1x68s4sfld3" path="res://main.gd" id="1_vivmo"]
 [ext_resource type="Script" uid="uid://do12uhlu2gl50" path="res://sprite_2d.gd" id="2_h2yge"]
 [ext_resource type="Texture2D" uid="uid://cmire1jeqw6hv" path="res://Imagens/happysonic_color.png" id="3_272bh"]
 [ext_resource type="Texture2D" uid="uid://b2ad604g2tio1" path="res://Imagens/ragesonic_color.png" id="4_5vw27"]
@@ -16,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://bx186k3iafwh1" path="res://Imagens/sonictutorial_bp.png" id="14_2cqfq"]
 
 [node name="Main" type="Node2D" unique_id=65788819]
+script = ExtResource("1_vivmo")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=327730013]
 self_modulate = Color(1, 1, 1, 0.18039216)

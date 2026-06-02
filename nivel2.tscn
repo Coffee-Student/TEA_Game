@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://cujhm2eedxjt3"]
+
+[ext_resource type="Texture2D" uid="uid://ducn63tm4sp4w" path="res://Imagens/backgroundsonic.png" id="1_8g6xw"]
+[ext_resource type="AudioStream" uid="uid://b1r8c55ktx1ge" path="res://Sounds/BackgroundMusic.mp3" id="2_3jv3p"]
+[ext_resource type="AudioStream" uid="uid://cwenp8ctaq3u2" path="res://Sounds/sfx_hit.mp3" id="3_7xk3h"]
+[ext_resource type="AudioStream" uid="uid://b0lm5f0j2v0hv" path="res://Sounds/sfx_wronghit.mp3" id="4_e3028"]
+[ext_resource type="Texture2D" uid="uid://dftld2s6d6i2t" path="res://Imagens/Sonic_Sorrindo.png" id="5_fll1b"]
+[ext_resource type="Script" uid="uid://do12uhlu2gl50" path="res://sprite_2d.gd" id="6_qrso4"]
+[ext_resource type="Texture2D" uid="uid://i1idupdtxsjp" path="res://Imagens/Sonic_Sorrindo_Silhueta.png" id="7_wlu4u"]
+[ext_resource type="Texture2D" uid="uid://ba0m5pwgc68wy" path="res://Imagens/Tails_Triste.png" id="8_fll1b"]
+[ext_resource type="Texture2D" uid="uid://bsxoquy0sth67" path="res://Imagens/Tails_Triste_Silhueta.png" id="9_qrso4"]
+[ext_resource type="Texture2D" uid="uid://bmbv06kq0m147" path="res://Imagens/Knuckles _Confiante.png" id="10_wlu4u"]
+[ext_resource type="Texture2D" uid="uid://rr6wj06ytdaf" path="res://Imagens/Knuckles _Confiante_Silhueta.png" id="11_killj"]
+[ext_resource type="Texture2D" uid="uid://clp6lcvox2jxv" path="res://Imagens/Shadow_Angry.png" id="12_wlu4u"]
+[ext_resource type="Texture2D" uid="uid://bl66wti8m1its" path="res://Imagens/Shadow_Angry_Silhueta.png" id="13_killj"]
+[ext_resource type="Texture2D" uid="uid://q2adrme07kbv" path="res://Imagens/Amy_Medo.png" id="14_killj"]
+[ext_resource type="Texture2D" uid="uid://t06fxdhintqs" path="res://Imagens/Amy_Medo_Silhueta.png" id="15_coise"]
+
+[node name="Main" type="Node2D" unique_id=65788819]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=327730013]
+self_modulate = Color(1, 1, 1, 0.18039216)
+position = Vector2(640, 360.00003)
+scale = Vector2(0.9090909, 0.9375)
+texture = ExtResource("1_8g6xw")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1683102874]
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=1504210476]
+stream = ExtResource("2_3jv3p")
+volume_db = -10.949
+autoplay = true
+parameters/looping = true
+
+[node name="sfx_hit" type="AudioStreamPlayer" parent="." unique_id=15445410]
+stream = ExtResource("3_7xk3h")
+
+[node name="sfx_wronghit" type="AudioStreamPlayer" parent="." unique_id=1360557119]
+stream = ExtResource("4_e3028")
+
+[node name="TelaTutorial" type="CanvasLayer" parent="." unique_id=1178499453]
+
+[node name="Sonic_Happy" type="Sprite2D" parent="." unique_id=2003880560 groups=["grupo_feliz"]]
+position = Vector2(143.99997, 104)
+scale = Vector2(0.30042124, 0.26939356)
+texture = ExtResource("5_fll1b")
+script = ExtResource("6_qrso4")
+
+[node name="Sonic_Happy_bp" type="Sprite2D" parent="." unique_id=88682429 groups=["grupo_feliz"]]
+modulate = Color(1, 1, 1, 0.9882353)
+position = Vector2(1112, 600.00006)
+scale = Vector2(0.29358634, 0.2680672)
+texture = ExtResource("7_wlu4u")
+
+[node name="Tails_Sad" type="Sprite2D" parent="." unique_id=535287538]
+position = Vector2(1113.0001, 367.00003)
+scale = Vector2(0.29870176, 0.26831684)
+texture = ExtResource("8_fll1b")
+
+[node name="Tails_Sad_bp" type="Sprite2D" parent="." unique_id=1477066917]
+modulate = Color(1, 1, 1, 0.9882353)
+position = Vector2(272, 336)
+scale = Vector2(0.305137, 0.26761362)
+texture = ExtResource("9_qrso4")
+
+[node name="Knuckles_Confiante" type="Sprite2D" parent="." unique_id=689697371]
+position = Vector2(808, 408)
+scale = Vector2(0.22962864, 0.2618656)
+texture = ExtResource("10_wlu4u")
+
+[node name="Knuckles_Confiante_bp" type="Sprite2D" parent="." unique_id=426190468]
+modulate = Color(1, 1, 1, 0.9882353)
+position = Vector2(552, 544)
+scale = Vector2(0.22900198, 0.25860214)
+texture = ExtResource("11_killj")
+
+[node name="Shadow_Andry" type="Sprite2D" parent="." unique_id=781048711]
+position = Vector2(512, 144)
+scale = Vector2(0.18180943, 0.2583333)
+texture = ExtResource("12_wlu4u")
+
+[node name="Shadow_Andry_bp" type="Sprite2D" parent="." unique_id=1463351529]
+modulate = Color(1, 1, 1, 0.9882353)
+position = Vector2(1128, 120)
+scale = Vector2(0.18957455, 0.2612903)
+texture = ExtResource("13_killj")
+
+[node name="Amy_Medo" type="Sprite2D" parent="." unique_id=932432319]
+position = Vector2(200, 584)
+scale = Vector2(0.25997174, 0.25316665)
+texture = ExtResource("14_killj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1876189171]
+position = Vector2(832.00006, 160)
+scale = Vector2(0.25454026, 0.2552083)
+texture = ExtResource("15_coise")

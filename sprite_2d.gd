@@ -1,5 +1,5 @@
 extends Sprite2D
-
+	
 class_name MeuSonicDoJogo
 	
 static var jogo_ativo = false
@@ -58,21 +58,35 @@ func _input(event):
 			global_position = event.position
 
 func _executar_efeito_vitoria():
-	
-	# 1. Guardamos o tamanho atual que você definiu na interface
+	# 1. Guardamos o tamanho original exato antes de qualquer mudança
 	var escala_original = scale
-		# 2. Calculamos um tamanho 20% maior baseado na escala atual
 	var escala_maior = escala_original * 1.2
 	
 	var tween = create_tween()
-		
+	
+	# Efeito molejo
 	tween.tween_property(self, "skew", 0.2, 0.1)
 	tween.tween_property(self, "skew", 0.0, 0.1)
-	tween.tween_property(self, "modulate", Color(2.422, 3.809, 6.052, 1.0), 0.5)
-	tween.tween_property(self, "modulate", Color(1, 1, 1), 0.5)
 	
+	# Piscada verde de acerto
+	tween.tween_property(self, "modulate", Color(0.5, 2.0, 0.5, 1.0), 0.2)
+	tween.tween_property(self, "modulate", Color(1, 1, 1), 0.2)
+	
+	# Efeito mola seguro (usando as variáveis guardadas)
+	tween.tween_property(self, "scale", escala_maior, 0.10).set_trans(Tween.TRANS_CUBIC)
+	tween.tween_property(self, "scale", escala_original, 0.10).set_trans(Tween.TRANS_CUBIC)
+	
+	# Transforma o Sonic em uma silhueta dourada/amarela brilhante constante e semi-transparente
+	tween.tween_property(self, "modulate", Color(2.5, 1.997, 0.202, 0.259), 0.2)
+	
+	# Som e tranca física de clique
 	get_node("/root/Main/sfx_hit").play()
-
+	set_process_input(false)
+	
+	# CONFIRME SE ESTAS LINHAS ESTÃO AQUI:
+	if get_tree().current_scene.has_method("registrar_acerto"):
+		get_tree().current_scene.registrar_acerto()
+	
 func _executar_efeito_erro():
 	var tween = create_tween()
 	
