@@ -52,45 +52,49 @@ position = Vector2(1112, 600.00006)
 scale = Vector2(0.29358634, 0.2680672)
 texture = ExtResource("7_wlu4u")
 
-[node name="Tails_Sad" type="Sprite2D" parent="." unique_id=535287538]
+[node name="Tails_Sad" type="Sprite2D" parent="." unique_id=535287538 groups=["grupo_triste"]]
 position = Vector2(1113.0001, 367.00003)
 scale = Vector2(0.29870176, 0.26831684)
 texture = ExtResource("8_fll1b")
+script = ExtResource("6_qrso4")
 
-[node name="Tails_Sad_bp" type="Sprite2D" parent="." unique_id=1477066917]
+[node name="Tails_Sad_bp" type="Sprite2D" parent="." unique_id=1477066917 groups=["grupo_triste"]]
 modulate = Color(1, 1, 1, 0.9882353)
 position = Vector2(272, 336)
 scale = Vector2(0.305137, 0.26761362)
 texture = ExtResource("9_qrso4")
 
-[node name="Knuckles_Confiante" type="Sprite2D" parent="." unique_id=689697371]
+[node name="Knuckles_Confiante" type="Sprite2D" parent="." unique_id=689697371 groups=["grupo_coragem"]]
 position = Vector2(808, 408)
 scale = Vector2(0.22962864, 0.2618656)
 texture = ExtResource("10_wlu4u")
+script = ExtResource("6_qrso4")
 
-[node name="Knuckles_Confiante_bp" type="Sprite2D" parent="." unique_id=426190468]
+[node name="Knuckles_Confiante_bp" type="Sprite2D" parent="." unique_id=426190468 groups=["grupo_coragem"]]
 modulate = Color(1, 1, 1, 0.9882353)
 position = Vector2(552, 544)
 scale = Vector2(0.22900198, 0.25860214)
 texture = ExtResource("11_killj")
 
-[node name="Shadow_Andry" type="Sprite2D" parent="." unique_id=781048711]
-position = Vector2(512, 144)
-scale = Vector2(0.18180943, 0.2583333)
+[node name="Shadow_Andry" type="Sprite2D" parent="." unique_id=781048711 groups=["grupo_raiva"]]
+position = Vector2(502.04843, 132.46667)
+scale = Vector2(0.16720699, 0.22699273)
 texture = ExtResource("12_wlu4u")
+script = ExtResource("6_qrso4")
 
-[node name="Shadow_Andry_bp" type="Sprite2D" parent="." unique_id=1463351529]
+[node name="Shadow_Andry_bp" type="Sprite2D" parent="." unique_id=1463351529 groups=["grupo_raiva"]]
 modulate = Color(1, 1, 1, 0.9882353)
 position = Vector2(1128, 120)
 scale = Vector2(0.18957455, 0.2612903)
 texture = ExtResource("13_killj")
 
-[node name="Amy_Medo" type="Sprite2D" parent="." unique_id=932432319]
+[node name="Amy_Medo" type="Sprite2D" parent="." unique_id=932432319 groups=["grupo_medo"]]
 position = Vector2(200, 584)
 scale = Vector2(0.25997174, 0.25316665)
 texture = ExtResource("14_killj")
+script = ExtResource("6_qrso4")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1876189171]
+[node name="Amy_Medo_bp" type="Sprite2D" parent="." unique_id=1876189171 groups=["grupo_medo"]]
 position = Vector2(832.00006, 160)
 scale = Vector2(0.25454026, 0.2552083)
 texture = ExtResource("15_coise")

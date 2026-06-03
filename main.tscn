@@ -20,7 +20,7 @@
 script = ExtResource("1_vivmo")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=327730013]
-self_modulate = Color(1, 1, 1, 0.18039216)
+self_modulate = Color(1, 1, 1, 0.08235294)
 position = Vector2(640, 360.00003)
 scale = Vector2(0.9090909, 0.9375)
 texture = ExtResource("1_5vw27")
@@ -28,36 +28,36 @@ texture = ExtResource("1_5vw27")
 [node name="Alvo" type="Sprite2D" parent="." unique_id=1445836368 groups=["par_1"]]
 self_modulate = Color(1, 1, 1, 0.99215686)
 position = Vector2(1152, 584.00006)
-scale = Vector2(0.346, 0.33)
+scale = Vector2(0.446, 0.425)
 texture = ExtResource("4_lquwl")
 
 [node name="Alvo2" type="Sprite2D" parent="." unique_id=1443879517 groups=["par_2"]]
 self_modulate = Color(1, 1, 1, 0.99215686)
-position = Vector2(768, 272)
-scale = Vector2(0.342, 0.33)
+position = Vector2(816.00006, 288)
+scale = Vector2(0.446, 0.425)
 texture = ExtResource("6_kek77")
 
 [node name="Alvo3" type="Sprite2D" parent="." unique_id=178568215 groups=["par_3"]]
 self_modulate = Color(1, 1, 1, 0.99215686)
 position = Vector2(168.00002, 544)
-scale = Vector2(0.33415848, 0.33012885)
+scale = Vector2(0.446, 0.425)
 texture = ExtResource("7_4c57u")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=157572213 groups=["par_1"]]
 position = Vector2(264, 158)
-scale = Vector2(0.346, 0.33)
+scale = Vector2(0.446, 0.425)
 texture = ExtResource("1_1bvp3")
 script = ExtResource("2_h2yge")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=532187006 groups=["par_2"]]
 position = Vector2(496.00006, 464)
-scale = Vector2(0.342, 0.33)
+scale = Vector2(0.446, 0.425)
 texture = ExtResource("3_272bh")
 script = ExtResource("2_h2yge")
 
 [node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1869700781 groups=["par_3"]]
 position = Vector2(1064, 144)
-scale = Vector2(0.34421784, 0.33)
+scale = Vector2(0.446, 0.425)
 texture = ExtResource("4_5vw27")
 script = ExtResource("2_h2yge")
 
@@ -83,21 +83,23 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -448.5
-offset_top = -250.0
-offset_right = 451.5
-offset_bottom = 250.0
+offset_left = -448.0
+offset_top = -240.0
+offset_right = 452.0
+offset_bottom = 260.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
 color = Color(0.654902, 0.654902, 0.654902, 0.8235294)
 script = ExtResource("12_w48qg")
 
 [node name="SonicDemo" type="Sprite2D" parent="TelaTutorial/TutorialOverlay" unique_id=542597190]
-position = Vector2(130.8125, 138.38625)
-scale = Vector2(0.37031516, 0.34339783)
+position = Vector2(135.99998, 136)
+scale = Vector2(0.392, 0.454)
 texture = ExtResource("13_vivmo")
 
 [node name="AlvoDemo" type="Sprite2D" parent="TelaTutorial/TutorialOverlay" unique_id=475888100]
 position = Vector2(744.5, 354)
-scale = Vector2(0.37, 0.343)
+scale = Vector2(0.392, 0.454)
 texture = ExtResource("14_2cqfq")

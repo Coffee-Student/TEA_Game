@@ -36,6 +36,8 @@ func _input(event):
 						encaixado = true
 						acertou = true
 						
+						objeto.queue_free()
+						
 						_executar_efeito_vitoria()
 			
 			# Agora sim! 'arrastando' ainda é true aqui se o jogador estava movendo este objeto
@@ -76,8 +78,8 @@ func _executar_efeito_vitoria():
 	tween.tween_property(self, "scale", escala_maior, 0.10).set_trans(Tween.TRANS_CUBIC)
 	tween.tween_property(self, "scale", escala_original, 0.10).set_trans(Tween.TRANS_CUBIC)
 	
-	# Transforma o Sonic em uma silhueta dourada/amarela brilhante constante e semi-transparente
-	tween.tween_property(self, "modulate", Color(2.5, 1.997, 0.202, 0.259), 0.2)
+	# Mantém a cor original do objeto, apenas mudando a opacidade (Alfa) para 0.25 (semi-transparente)
+	tween.tween_property(self, "modulate:a", 0.4, 0.2)
 	
 	# Som e tranca física de clique
 	get_node("/root/Main/sfx_hit").play()
