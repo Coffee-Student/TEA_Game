@@ -46,12 +46,16 @@ func _resetar_posicoes_demo():
 func _input(event):
 	if event is InputEventMouseButton or event is InputEventScreenTouch:
 		if event.pressed:
+			
+			set_process_input(false)
+			
 			var tween_fechar = create_tween()
 			tween_fechar.tween_property(self, "modulate:a", 0.0, 0.4)
 			tween_fechar.tween_callback(_finalizar_tutorial)
 
 # Função chamada quando a animação de fechar o tutorial termina
 func _finalizar_tutorial():
-	# Trocamos Sprite2D por MeuSonicDoJogo
+	# Ativa o jogo real
 	MeuSonicDoJogo.jogo_ativo = true
+	# Deleta o tutorial da árvore de nós completamente
 	queue_free()

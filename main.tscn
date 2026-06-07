@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dps30muvas1w5"]
 
 [ext_resource type="Texture2D" uid="uid://c4wrch7ay16hc" path="res://Imagens/sadsonic_color.png" id="1_1bvp3"]
-[ext_resource type="Texture2D" uid="uid://ducn63tm4sp4w" path="res://Imagens/backgroundsonic.png" id="1_5vw27"]
 [ext_resource type="Script" uid="uid://bp1x68s4sfld3" path="res://main.gd" id="1_vivmo"]
 [ext_resource type="Script" uid="uid://do12uhlu2gl50" path="res://sprite_2d.gd" id="2_h2yge"]
+[ext_resource type="Texture2D" uid="uid://d36p2x57mbkm7" path="res://Imagens/Testefundo.png" id="2_vivmo"]
 [ext_resource type="Texture2D" uid="uid://cmire1jeqw6hv" path="res://Imagens/happysonic_color.png" id="3_272bh"]
 [ext_resource type="Texture2D" uid="uid://b2ad604g2tio1" path="res://Imagens/ragesonic_color.png" id="4_5vw27"]
 [ext_resource type="Texture2D" uid="uid://080wscgq6njh" path="res://Imagens/sadsonic_bp.png" id="4_lquwl"]
@@ -20,10 +20,10 @@
 script = ExtResource("1_vivmo")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=327730013]
-self_modulate = Color(1, 1, 1, 0.08235294)
-position = Vector2(640, 360.00003)
-scale = Vector2(0.9090909, 0.9375)
-texture = ExtResource("1_5vw27")
+self_modulate = Color(1, 1, 1, 0.35686275)
+position = Vector2(640, 360)
+scale = Vector2(0.8839779, 0.6629834)
+texture = ExtResource("2_vivmo")
 
 [node name="Alvo" type="Sprite2D" parent="." unique_id=1445836368 groups=["par_1"]]
 self_modulate = Color(1, 1, 1, 0.99215686)
@@ -91,7 +91,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
-color = Color(0.654902, 0.654902, 0.654902, 0.8235294)
+color = Color(0.27042824, 0.51085156, 0.999991, 0.78431374)
 script = ExtResource("12_w48qg")
 
 [node name="SonicDemo" type="Sprite2D" parent="TelaTutorial/TutorialOverlay" unique_id=542597190]
@@ -103,3 +103,15 @@ texture = ExtResource("13_vivmo")
 position = Vector2(744.5, 354)
 scale = Vector2(0.392, 0.454)
 texture = ExtResource("14_2cqfq")
+
+[node name="FadeOut" type="CanvasLayer" parent="." unique_id=1307432922]
+
+[node name="ColorRect" type="ColorRect" parent="FadeOut" unique_id=272899457]
+modulate = Color(0.6666667, 0.6666667, 0.6666667, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)

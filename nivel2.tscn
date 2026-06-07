@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cujhm2eedxjt3"]
 
-[ext_resource type="Texture2D" uid="uid://ducn63tm4sp4w" path="res://Imagens/backgroundsonic.png" id="1_8g6xw"]
+[ext_resource type="Texture2D" uid="uid://betp4t1dj5bdj" path="res://Imagens/Imagemfundo2.png" id="1_coise"]
 [ext_resource type="AudioStream" uid="uid://b1r8c55ktx1ge" path="res://Sounds/BackgroundMusic.mp3" id="2_3jv3p"]
 [ext_resource type="AudioStream" uid="uid://cwenp8ctaq3u2" path="res://Sounds/sfx_hit.mp3" id="3_7xk3h"]
 [ext_resource type="AudioStream" uid="uid://b0lm5f0j2v0hv" path="res://Sounds/sfx_wronghit.mp3" id="4_e3028"]
@@ -19,10 +19,10 @@
 [node name="Main" type="Node2D" unique_id=65788819]
 
 [node name="Background" type="Sprite2D" parent="." unique_id=327730013]
-self_modulate = Color(1, 1, 1, 0.18039216)
-position = Vector2(640, 360.00003)
-scale = Vector2(0.9090909, 0.9375)
-texture = ExtResource("1_8g6xw")
+self_modulate = Color(1, 1, 1, 0.3882353)
+position = Vector2(640.00006, 360)
+scale = Vector2(0.883978, 0.6629834)
+texture = ExtResource("1_coise")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1683102874]
 
