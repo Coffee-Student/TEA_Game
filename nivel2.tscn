@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cujhm2eedxjt3"]
 
+[ext_resource type="Script" uid="uid://bui6srg657pbw" path="res://nivel2.gd" id="1_4rdjn"]
 [ext_resource type="Texture2D" uid="uid://betp4t1dj5bdj" path="res://Imagens/Imagemfundo2.png" id="1_coise"]
-[ext_resource type="AudioStream" uid="uid://b1r8c55ktx1ge" path="res://Sounds/BackgroundMusic.mp3" id="2_3jv3p"]
 [ext_resource type="AudioStream" uid="uid://cwenp8ctaq3u2" path="res://Sounds/sfx_hit.mp3" id="3_7xk3h"]
 [ext_resource type="AudioStream" uid="uid://b0lm5f0j2v0hv" path="res://Sounds/sfx_wronghit.mp3" id="4_e3028"]
 [ext_resource type="Texture2D" uid="uid://dftld2s6d6i2t" path="res://Imagens/Sonic_Sorrindo.png" id="5_fll1b"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://t06fxdhintqs" path="res://Imagens/Amy_Medo_Silhueta.png" id="15_coise"]
 
 [node name="Main" type="Node2D" unique_id=65788819]
+script = ExtResource("1_4rdjn")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=327730013]
 self_modulate = Color(1, 1, 1, 0.3882353)
@@ -25,12 +26,6 @@ scale = Vector2(0.883978, 0.6629834)
 texture = ExtResource("1_coise")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1683102874]
-
-[node name="BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=1504210476]
-stream = ExtResource("2_3jv3p")
-volume_db = -10.949
-autoplay = true
-parameters/looping = true
 
 [node name="sfx_hit" type="AudioStreamPlayer" parent="." unique_id=15445410]
 stream = ExtResource("3_7xk3h")

@@ -1,0 +1,179 @@
+[gd_scene format=3 uid="uid://e5ofy57t47wj"]
+
+[ext_resource type="Texture2D" uid="uid://i0sr2n6wuysn" path="res://Imagens/Backgroundfase3.png" id="1_lmouq"]
+[ext_resource type="Script" uid="uid://dru7yk7nuse21" path="res://nivel3.gd" id="2_iukwk"]
+[ext_resource type="Texture2D" uid="uid://dwocb0u4nnxwj" path="res://Imagens/SpriteSonicHappy.png" id="3_5jc6x"]
+[ext_resource type="Texture2D" uid="uid://dh0nqwt4lgk2v" path="res://Imagens/SpriteTailsSad.png" id="4_foow7"]
+[ext_resource type="Texture2D" uid="uid://5sur3214ghe5" path="res://Imagens/SpriteShadow.png" id="5_ol0td"]
+[ext_resource type="Texture2D" uid="uid://c4g8o5bebf1it" path="res://Imagens/Palavra_Feliz.png" id="6_sfkl1"]
+[ext_resource type="Texture2D" uid="uid://bpn3o4eec3aya" path="res://Imagens/Palavra_Triste.png" id="7_cdqb5"]
+[ext_resource type="Texture2D" uid="uid://6wfql2xn1nig" path="res://Imagens/Palavra_Raiva.png" id="8_turtx"]
+
+[sub_resource type="Animation" id="Animation_foow7"]
+resource_name = "Felicidade"
+length = 2.77
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+
+[sub_resource type="Animation" id="Animation_ol0td"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ai75a"]
+_data = {
+&"Felicidade": SubResource("Animation_foow7"),
+&"RESET": SubResource("Animation_ol0td")
+}
+
+[sub_resource type="Animation" id="Animation_ai75a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_1col5"]
+resource_name = "Triste"
+length = 2.2666667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.26666668, 0.5, 0.73333335, 0.96666664, 1.2, 1.4333333, 1.6666666, 1.9333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sfkl1"]
+_data = {
+&"RESET": SubResource("Animation_ai75a"),
+&"Triste": SubResource("Animation_1col5")
+}
+
+[sub_resource type="Animation" id="Animation_sfkl1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_cdqb5"]
+resource_name = "Raiva"
+length = 2.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.23333333, 0.46666667, 0.7, 0.93333334, 1.1666666, 1.4, 1.6333333, 1.8666667, 2.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_turtx"]
+_data = {
+&"RESET": SubResource("Animation_sfkl1"),
+&"Raiva": SubResource("Animation_cdqb5")
+}
+
+[node name="Nivel3" type="Node2D" unique_id=754576480]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=366518554]
+self_modulate = Color(1, 1, 1, 0.39215687)
+position = Vector2(641, 360)
+scale = Vector2(0.8825966, 0.66298336)
+texture = ExtResource("1_lmouq")
+script = ExtResource("2_iukwk")
+metadata/_edit_lock_ = true
+
+[node name="Sonic" type="Sprite2D" parent="." unique_id=932638044]
+position = Vector2(1159.9999, 488)
+scale = Vector2(0.72761184, 0.7395522)
+texture = ExtResource("3_5jc6x")
+hframes = 9
+
+[node name="Felicidade" type="AnimationPlayer" parent="Sonic" unique_id=1450740600]
+libraries/ = SubResource("AnimationLibrary_ai75a")
+autoplay = &"Felicidade"
+
+[node name="Tails" type="Sprite2D" parent="." unique_id=53063314]
+position = Vector2(160, 352.00003)
+scale = Vector2(0.68478256, 0.7285278)
+texture = ExtResource("4_foow7")
+hframes = 9
+
+[node name="Triste" type="AnimationPlayer" parent="Tails" unique_id=53269998]
+libraries/ = SubResource("AnimationLibrary_sfkl1")
+autoplay = &"Triste"
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=2132374625]
+position = Vector2(728, 144)
+scale = Vector2(0.7333333, 0.71567154)
+texture = ExtResource("5_ol0td")
+hframes = 10
+
+[node name="Raiva" type="AnimationPlayer" parent="Shadow" unique_id=753329655]
+libraries/ = SubResource("AnimationLibrary_turtx")
+autoplay = &"Raiva"
+
+[node name="PalavraFeliz" type="Sprite2D" parent="." unique_id=1880038420]
+position = Vector2(221.25, 75.375)
+scale = Vector2(0.2337067, 0.20423342)
+texture = ExtResource("6_sfkl1")
+
+[node name="PalavraTriste" type="Sprite2D" parent="." unique_id=435068321]
+position = Vector2(1100.625, 204.75)
+scale = Vector2(0.21955277, 0.20433792)
+texture = ExtResource("7_cdqb5")
+
+[node name="PalavraRaiva" type="Sprite2D" parent="." unique_id=378669963]
+position = Vector2(560, 532)
+scale = Vector2(0.47267357, 0.45528454)
+texture = ExtResource("8_turtx")

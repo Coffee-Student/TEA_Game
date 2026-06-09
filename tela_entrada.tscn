@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ds7ghppiyfojx" path="res://Imagens/Background_Entrada.png" id="2_34mo3"]
 [ext_resource type="Texture2D" uid="uid://2e2gam1i4cqy" path="res://Imagens/Background_Palavra_Entrada.png" id="3_fgwnv"]
 [ext_resource type="Texture2D" uid="uid://25j3mxbnnqbb" path="res://Imagens/SpriteSonicEntrada.png" id="4_ibrv2"]
+[ext_resource type="AudioStream" uid="uid://ilrls411jkkr" path="res://Sounds/SonicOpening.mp3" id="5_34mo3"]
 
 [sub_resource type="Animation" id="Animation_s2obi"]
 resource_name = "Comemorar"
@@ -16,10 +17,10 @@ tracks/0/path = NodePath("SonicMenu:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6),
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 4]
+"values": [0, 0, 2, 3, 4]
 }
 
 [sub_resource type="Animation" id="Animation_qut6p"]
@@ -79,3 +80,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="." unique_id=1076771088]
+stream = ExtResource("5_34mo3")
+autoplay = true

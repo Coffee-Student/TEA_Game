@@ -7,6 +7,14 @@ extends Node2D
 var total_pecas = 3
 var pecas_encaixadas = 0
 
+func _ready():
+	# 1. Garante que o volume volte ao normal (caso o menu tenha abaixado)
+	if AudioGlobal.tocador_musica:
+		AudioGlobal.tocador_musica.volume_db = 0.0
+	
+	# 2. Passa o caminho real e exato do seu arquivo de música
+	AudioGlobal.tocar_musica_fase("res://Sounds/BackgroundMusic.mp3")
+
 func registrar_acerto():
 	pecas_encaixadas += 1
 	print("MENSAGEM DA MAIN: Uma peça foi encaixada! Total agora: ", pecas_encaixadas)

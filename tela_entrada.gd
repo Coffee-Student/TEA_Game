@@ -1,18 +1,18 @@
 extends Node2D
 
-# Puxa a referência exata do ColorRect que acabamos de criar
 @onready var painel_fade = $CanvasFade/ColorRect
+@onready var musica_fundo = $MusicaFundo # Puxa o nó da música
 
 func _ready():
-	# Garante que o painel começa invisível por segurança
 	if painel_fade:
 		painel_fade.modulate.a = 0.0
-
+	
+	# Esta linha diz ao nosso script global para tocar a música de abertura
+	AudioGlobal.tocar_musica_fase("res://Sounds/SonicOpening.mp3")
+	
 func _input(event):
-	# Detecta se a criança tocou na tela ou clicou com o mouse
 	if event is InputEventMouseButton or event is InputEventScreenTouch:
 		if event.pressed:
-			# Desativa temporariamente novos cliques para evitar bugs de transição dupla
 			set_process_input(false)
 			_iniciar_jogo()
 
@@ -22,12 +22,16 @@ func _iniciar_jogo():
 		return
 		
 	var tween = create_tween()
-	# Faz o quadrado preto aparecer suavemente em 0.7 segundos
+	# Faz o fade preto na tela
 	tween.tween_property(painel_fade, "modulate:a", 1.0, 0.7).set_trans(Tween.TRANS_SINE)
-	# Assim que o fade terminar, chama a função para trocar de cena
+	
+	# Faz a música global abaixar o volume suavemente junto com o fade preto
+	if AudioGlobal.tocador_musica:
+		tween.parallel().tween_property(AudioGlobal.tocador_musica, "volume_db", -40.0, 0.7)
+	
 	tween.tween_callback(mudar_para_nivel_1)
 
 func mudar_para_nivel_1():
-	print("Saindo do menu... Indo para o Nível 1!")
-	# Transiciona para a sua cena principal
+	# Para a música de abertura de vez antes de trocar para o jogo
+	AudioGlobal.parar_musica()
 	get_tree().change_scene_to_file("res://main.tscn")
