@@ -93,3 +93,15 @@ script = ExtResource("6_qrso4")
 position = Vector2(832.00006, 160)
 scale = Vector2(0.25454026, 0.2552083)
 texture = ExtResource("15_coise")
+
+[node name="FadeOut" type="CanvasLayer" parent="." unique_id=1735108600]
+
+[node name="ColorRect" type="ColorRect" parent="FadeOut" unique_id=861875234]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)

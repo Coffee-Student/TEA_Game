@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://e5ofy57t47wj"]
 
+[ext_resource type="Script" uid="uid://rlo0u0ku2nic" path="res://sprite_2d_fase3.gd" id="1_cdqb5"]
 [ext_resource type="Texture2D" uid="uid://i0sr2n6wuysn" path="res://Imagens/Backgroundfase3.png" id="1_lmouq"]
 [ext_resource type="Script" uid="uid://dru7yk7nuse21" path="res://nivel3.gd" id="2_iukwk"]
 [ext_resource type="Texture2D" uid="uid://dwocb0u4nnxwj" path="res://Imagens/SpriteSonicHappy.png" id="3_5jc6x"]
@@ -8,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://c4g8o5bebf1it" path="res://Imagens/Palavra_Feliz.png" id="6_sfkl1"]
 [ext_resource type="Texture2D" uid="uid://bpn3o4eec3aya" path="res://Imagens/Palavra_Triste.png" id="7_cdqb5"]
 [ext_resource type="Texture2D" uid="uid://6wfql2xn1nig" path="res://Imagens/Palavra_Raiva.png" id="8_turtx"]
+[ext_resource type="AudioStream" uid="uid://cwenp8ctaq3u2" path="res://Sounds/sfx_hit.mp3" id="10_turtx"]
+[ext_resource type="AudioStream" uid="uid://b0lm5f0j2v0hv" path="res://Sounds/sfx_wronghit.mp3" id="11_alg0b"]
 
 [sub_resource type="Animation" id="Animation_foow7"]
 resource_name = "Felicidade"
@@ -124,6 +127,7 @@ _data = {
 }
 
 [node name="Nivel3" type="Node2D" unique_id=754576480]
+script = ExtResource("2_iukwk")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=366518554]
 self_modulate = Color(1, 1, 1, 0.39215687)
@@ -134,7 +138,7 @@ script = ExtResource("2_iukwk")
 metadata/_edit_lock_ = true
 
 [node name="Sonic" type="Sprite2D" parent="." unique_id=932638044]
-position = Vector2(1159.9999, 488)
+position = Vector2(1167.9999, 488)
 scale = Vector2(0.72761184, 0.7395522)
 texture = ExtResource("3_5jc6x")
 hframes = 9
@@ -144,7 +148,7 @@ libraries/ = SubResource("AnimationLibrary_ai75a")
 autoplay = &"Felicidade"
 
 [node name="Tails" type="Sprite2D" parent="." unique_id=53063314]
-position = Vector2(160, 352.00003)
+position = Vector2(128, 463)
 scale = Vector2(0.68478256, 0.7285278)
 texture = ExtResource("4_foow7")
 hframes = 9
@@ -163,17 +167,55 @@ hframes = 10
 libraries/ = SubResource("AnimationLibrary_turtx")
 autoplay = &"Raiva"
 
-[node name="PalavraFeliz" type="Sprite2D" parent="." unique_id=1880038420]
+[node name="PalavraFeliz" type="Sprite2D" parent="." unique_id=1880038420 groups=["grupo_sonic"]]
 position = Vector2(221.25, 75.375)
 scale = Vector2(0.2337067, 0.20423342)
 texture = ExtResource("6_sfkl1")
+script = ExtResource("1_cdqb5")
 
-[node name="PalavraTriste" type="Sprite2D" parent="." unique_id=435068321]
+[node name="Alvo_Feliz" type="Sprite2D" parent="." unique_id=1926121665 groups=["grupo_sonic"]]
+modulate = Color(1, 1, 1, 0.3137255)
+position = Vector2(1168, 496)
+scale = Vector2(0.12219949, 0.07322657)
+texture = ExtResource("6_sfkl1")
+
+[node name="PalavraTriste" type="Sprite2D" parent="." unique_id=435068321 groups=["grupo_tails"]]
 position = Vector2(1100.625, 204.75)
 scale = Vector2(0.21955277, 0.20433792)
 texture = ExtResource("7_cdqb5")
+script = ExtResource("1_cdqb5")
 
-[node name="PalavraRaiva" type="Sprite2D" parent="." unique_id=378669963]
+[node name="Alvo_Triste" type="Sprite2D" parent="." unique_id=946506170 groups=["grupo_tails"]]
+modulate = Color(1, 1, 1, 0.3137255)
+position = Vector2(144, 473)
+scale = Vector2(0.123394325, 0.09674653)
+texture = ExtResource("7_cdqb5")
+
+[node name="PalavraRaiva" type="Sprite2D" parent="." unique_id=378669963 groups=["grupo_shadow"]]
 position = Vector2(560, 532)
 scale = Vector2(0.47267357, 0.45528454)
 texture = ExtResource("8_turtx")
+script = ExtResource("1_cdqb5")
+
+[node name="Alvo_Raiva" type="Sprite2D" parent="." unique_id=189650002 groups=["grupo_shadow"]]
+modulate = Color(1, 1, 1, 0.3137255)
+position = Vector2(728, 152)
+scale = Vector2(0.21969117, 0.19074407)
+texture = ExtResource("8_turtx")
+
+[node name="sfx_hit" type="AudioStreamPlayer" parent="." unique_id=1270341126]
+stream = ExtResource("10_turtx")
+
+[node name="sfx_wronghit" type="AudioStreamPlayer" parent="." unique_id=1748225928]
+stream = ExtResource("11_alg0b")
+
+[node name="FadeOut" type="CanvasLayer" parent="." unique_id=1972014309]
+
+[node name="ColorRect" type="ColorRect" parent="FadeOut" unique_id=746467929]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
