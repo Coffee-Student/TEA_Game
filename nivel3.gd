@@ -1,37 +1,35 @@
 extends Node2D
 
-# Pega o painel preto de FadeOut da Fase 3
-@onready var painel_fade = $FadeOut/ColorRect
+@onready var painel_fade: ColorRect = $FadeOut/ColorRect
 
-# Defina aqui quantas peças/palavras precisam ser encaixadas na Fase 3 para vencer
-var total_pecas = 3
-var pecas_encaixadas = 0
+var total_pecas: int = 3
+var pecas_encaixadas: int = 0
 
-func _ready():
-	# Mantém a mesma música tocando direto lá do nível 2!
+func _ready() -> void:
+	# Mantém a reprodução da música tema global e define o estado do jogo como ativo
 	AudioGlobal.tocar_musica_fase("res://Sounds/BackgroundMusic.mp3")
 	MeuSonicDoJogo.jogo_ativo = true
 
-func registrar_acerto():
+func registrar_acerto() -> void:
 	pecas_encaixadas += 1
-	print("MENSAGEM DO NÍVEL 3: Uma peça foi encaixada! Total agora: ", pecas_encaixadas)
 	
+	# Verifica se a condição de conclusão do jogo foi atingida
 	if pecas_encaixadas >= total_pecas:
 		_voltar_para_tela_entrada()
 
-func _voltar_para_tela_entrada():
-	# Proteção caso o nó de Fade Out não seja encontrado na árvore da Fase 3
+func _voltar_para_tela_entrada() -> void:
+	# Validação de segurança para existência do nó de transição
 	if painel_fade == null:
-		print("Erro: O nó ColorRect dentro de FadeOut não foi encontrado na Fase 3.")
+		push_error("Erro: O nó ColorRect dentro de FadeOut não foi localizado no Nível 3.")
 		mudar_cena()
 		return
 		
-	var tween = create_tween()
-	# Faz o retângulo preto da tela aparecer em 1.5 segundos
+	# Executa a animação de transição (Fade Out) utilizando Tween
+	var tween: Tween = create_tween()
 	tween.tween_property(painel_fade, "modulate:a", 1.0, 1.5).set_trans(Tween.TRANS_SINE)
 	tween.tween_interval(0.5)
 	tween.tween_callback(mudar_cena)
 
-func mudar_cena():
-	print("Parabéns! Jogo concluído. Voltando para a tela de entrada...")
+func mudar_cena() -> void:
+	# Retorna o fluxo do jogo para o menu principal após a conclusão
 	get_tree().change_scene_to_file("res://tela_entrada.tscn")

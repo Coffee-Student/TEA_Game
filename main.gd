@@ -1,41 +1,38 @@
 extends Node2D
 
-# Ajustado para o nome real da sua Scene Tree!
-@onready var painel_fade = $FadeOut/ColorRect
+@onready var painel_fade: ColorRect = $FadeOut/ColorRect
 
-# Nível 1 tem exatamente 3 peças de encaixe
-var total_pecas = 3
-var pecas_encaixadas = 0
+var total_pecas: int = 3
+var pecas_encaixadas: int = 0
 
-func _ready():
-	# 1. Garante que o volume volte ao normal (caso o menu tenha abaixado)
+func _ready() -> void:
+	# Restaura o volume padrão da trilha sonora
 	if AudioGlobal.tocador_musica:
 		AudioGlobal.tocador_musica.volume_db = 0.0
 	
-	# 2. Passa o caminho real e exato do seu arquivo de música
+	# Inicia a reprodução da música tema da fase
 	AudioGlobal.tocar_musica_fase("res://Sounds/BackgroundMusic.mp3")
 
-func registrar_acerto():
+func registrar_acerto() -> void:
 	pecas_encaixadas += 1
-	print("MENSAGEM DA MAIN: Uma peça foi encaixada! Total agora: ", pecas_encaixadas)
 	
+	# Verifica se a condição de vitória da fase foi atingida
 	if pecas_encaixadas >= total_pecas:
 		_avancar_para_fase_2()
 
-func _avancar_para_fase_2():
-	# Proteção caso o nó não seja encontrado por erro de digitação
+func _avancar_para_fase_2() -> void:
+	# Validação de segurança para existência do nó de transição
 	if painel_fade == null:
-		print("Erro: O nó ColorRect dentro de FadeOut não foi encontrado.")
+		push_error("Erro: O nó ColorRect dentro de FadeOut não foi localizado.")
 		mudar_cena()
 		return
 		
-	var tween = create_tween()
-	# Faz o seu retângulo preto aparecer em 1.5 segundos
+	# Executa a animação de transição (Fade Out) utilizando Tween
+	var tween: Tween = create_tween()
 	tween.tween_property(painel_fade, "modulate:a", 1.0, 1.5).set_trans(Tween.TRANS_SINE)
 	tween.tween_interval(0.5)
 	tween.tween_callback(mudar_cena)
 
-func mudar_cena():
-	print("Carregando o Nível 2...")
-	# Certifique-se de que o seu arquivo na pasta se chama exatamente nivel2.tscn
+func mudar_cena() -> void:
+	# Transiciona o fluxo do jogo para o próximo nível
 	get_tree().change_scene_to_file("res://nivel2.tscn")

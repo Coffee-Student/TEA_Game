@@ -1,7 +1,6 @@
-# Isso faz o script herdar TODAS as funções e mecânicas de arrastar do seu script antigo!
+# Herda toda a lógica de manipulação e propriedades da classe base de movimentação
 extends "res://sprite_2d.gd" 
 
-# Aqui nós vamos ajustar apenas a posição final do encaixe sem quebrar o resto do jogo
-func _ready():
-	# Mantém o comportamento de inicialização do script original
+func _ready() -> void:
+	# Executa o comportamento de inicialização da classe original (parent class)
 	super._ready()

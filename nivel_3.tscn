@@ -134,7 +134,6 @@ self_modulate = Color(1, 1, 1, 0.39215687)
 position = Vector2(641, 360)
 scale = Vector2(0.8825966, 0.66298336)
 texture = ExtResource("1_lmouq")
-script = ExtResource("2_iukwk")
 metadata/_edit_lock_ = true
 
 [node name="Sonic" type="Sprite2D" parent="." unique_id=932638044]
